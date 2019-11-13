@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { range, inRange } from 'lodash';
 import Draggable from './Draggable';
+import Rect from './Rect';
 
 const MAX = 5;
 const HEIGHT = 80;
@@ -72,24 +73,4 @@ export default App;
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
-`;
-
-const Rect = styled.div.attrs(props => ({
-  style: {
-    transition: props.isDragging ? 'none' : 'all 500ms'
-  }
-}))`
-  width: 300px;
-  user-select: none;
-  height: ${HEIGHT}px;
-  background: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: ${({ top }) => 100 + top}px;
-  left: calc(50vw - 150px);
-  font-size: 20px;
-  color: #777;
 `;
